@@ -1,0 +1,326 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">
+    <title>
+        SQL Documentation
+    </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Saurabh" />
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+</head>
+<body>
+ <form method="post" action="./SQLDetails?p=Function&amp;dt=&amp;odmj=&amp;odmi=&amp;h=A6A7D086B8FAC1100832BB98911A9553D47FF20591D56E0E308D4DB0F1303210" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A1B40749" />
+</div>
+    <nav class="navbar navbar-default" style="min-height:30px;"></nav>
+    <div class="container-fluid">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default.html">SQL RealTimeDocs™</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Architecture<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Server.html">Servers</a></li>
+                                <li><a href="SQLDetails_Databases.html">Databases</a></li>
+                                <li><a href="SQLDetails_ScheduledJobs.html">Scheduled Jobs</a></li>
+                                <li><a href="SQLDetails_UserPermissions.html">UserPermissions </a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ExtendedProperties.html"> Documentation</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_All.html" onclick="return confirm('This is a resource intensive operation. Have patience.'); "><span style="color: red">Complete Details</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Objects<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Table.html">Table</a></li>
+                                <li><a href="SQLDetails_View.html">View</a></li>
+                                <li><a href="SQLDetails_Columns.html">Columns</a></li>
+                                <li><a href="SQLDetails_Function.html">Function</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_StoredProcedures.html">Stored Procedures</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ServiceBroker.html">ServiceBroker</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_Misc.html">Misc.</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Help<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpAddEP">Add Documentation / ExtendedProperties</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                About<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpPurpose">Purpose</a></li>
+                                <li><a href="HelpDoc.html#HelpHowItWorks">How it Works</a></li>
+                                <li><a href="HelpDoc.html#HelpHowtoDocument">How To do Documentation</a></li>
+                                <li><a href="HelpDoc.html#HelpWhatitCantDo">What it Can't Do</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="Default.html">[Server: Common DB Server]</a></li>
+                        <li class="active"><a href="Default.html">[DB: AdventureWorks2017]</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </div>
+        <!-- Content Page Section -->
+        <div class="fixed-top" style="text-align:right;"><span id="lblLoggedInUser">[User: <a href="https://www.linkedin.com/in/SaurabhSharmaIndia" target="_blank">Saurabh Sharma</a>]</span></div>
+        <div class="container-fluid">
+
+
+
+            <span id="ContentSection_lblMessage"></span>
+            <!-- Main component for a primary marketing message or call to action -->
+
+
+
+
+
+
+
+
+
+            <div id="ContentSection_pnlFunction">
+
+                <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px" id="Function">
+                    <h3>Function</h3>
+                    <div class="table-responsive">
+
+                        <table id="FunctionTable" class="table table-striped table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Schema Name</th>
+                                    <th>Function Name</th>
+                                    <th>Classification</th>
+                                    <th>Function Parameters</th>
+                                    <th>Function Return Type</th>
+                                    <th>Created Date</th>
+                                    <th>Last Modified Date</th>
+                                    <th>Object Desc</th>
+                                    <th>Object Process Mapping</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_0">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetAccountingStartDate&odmi=Dependencies_theyDependonOurObject&h=E2D2CE24306ACEEACD6BD56875D8D8FF71EB014EEA9CED33DA41F74A8DE3071F"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_0">ufnGetAccountingStartDate</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_0">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_0"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_0">datetime</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_0">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_0">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_0"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_0"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_1">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetAccountingEndDate&odmi=Dependencies_theyDependonOurObject&h=82186536588BCE1A0166B52CE8A34300EB54CFA924B6788943BF8A275A4C8834"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_1">ufnGetAccountingEndDate</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_1">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_1"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_1">datetime</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_1">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_1">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_1"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_1"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_2">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetContactInformation&odmi=Dependencies_theyDependonOurObject&h=8B77F6158406789222BEB9864D739812D26FFD5DB5B6E00AE453FBB6DA6E9F25"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_2">ufnGetContactInformation</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_2">SQL inline table-valued function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_2">@PersonID int</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_2"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_2">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_2">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_2"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_2"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_3">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetProductDealerPrice&odmi=Dependencies_theyDependonOurObject&h=1D274575F34BEB6C7FF11F73705E673D1B16A694805FD35DD33B3A8C5DBDA461"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_3">ufnGetProductDealerPrice</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_3">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_3">@ProductID int, @OrderDate datetime</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_3">money</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_3">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_3">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_3"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_3"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_4">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetProductListPrice&odmi=Dependencies_theyDependonOurObject&h=8C040FD09EB5CA64FBCC26A8E6611176FC4A3F85DC3FBFF9ACF92365845B657E"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_4">ufnGetProductListPrice</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_4">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_4">@ProductID int, @OrderDate datetime</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_4">money</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_4">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_4">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_4"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_4"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_5">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetProductStandardCost&odmi=Dependencies_theyDependonOurObject&h=E5487F0FD04B8402387E6338870E30C57B81910B8E2E17322A23EEE23AF96900"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_5">ufnGetProductStandardCost</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_5">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_5">@ProductID int, @OrderDate datetime</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_5">money</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_5">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_5">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_5"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_5"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_6">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetStock&odmi=Dependencies_theyDependonOurObject&h=7F032F49D956619A69F0F0806023F4C89EE84ADBFFA32D55A95D7EFCA2489168"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_6">ufnGetStock</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_6">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_6">@ProductID int</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_6">int</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_6">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_6">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_6"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_6"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_7">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetDocumentStatusText&odmi=Dependencies_theyDependonOurObject&h=1B150829D7BEBE33C8E880FB8B82AF5718C861E4A960A9BF16AA9FB42A7F24F5"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_7">ufnGetDocumentStatusText</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_7">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_7">@Status tinyint</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_7">nvarchar</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_7">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_7">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_7"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_7"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_8">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetPurchaseOrderStatusText&odmi=Dependencies_theyDependonOurObject&h=D4F95350ED5C76313CAD4AD53D9DD536C54EB4976D9BC10512B2856DAC710B39"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_8">ufnGetPurchaseOrderStatusText</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_8">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_8">@Status tinyint</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_8">nvarchar</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_8">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_8">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_8"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_8"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_9">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnGetSalesOrderStatusText&odmi=Dependencies_theyDependonOurObject&h=107E5141755163A790C15C1D1FC82C75711E06C7CD2FF42FE28B9DE060F2E11D"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_9">ufnGetSalesOrderStatusText</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_9">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_9">@Status tinyint</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_9">nvarchar</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_9">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_9">2017/10/27 02:33:15 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_9"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_9"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_SchemaName_10">dbo</span></td>
+                                    <td><a href="SQLDetails_Dependencies_Functions.html?p=Dependencies&dt=Function&odmj=ufnLeadingZeros&odmi=Dependencies_theyDependonOurObject&h=AAC4B7F9533CEC413391114EA9FC85A155E4D31B4C5CFC3B98E9CE0EDDF5DD93"><span id="ContentSection_rptFunction_lbl_Function_FunctionName_10">ufnLeadingZeros</span></a></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Classification_10">SQL scalar function</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncParameters_10">@Value int</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_FuncReturnType_10">varchar</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Create_Date_10">2017/10/27 02:33:01 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Modify_Date_10">2017/10/27 02:33:01 PM</span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_Desc_10"></span></td>
+                                    <td><span id="ContentSection_rptFunction_lbl_Function_Object_ProcessMapping_10"></span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#FunctionTable').dataTable(
+                            {
+                                dom: 'Bfrtip',
+                                buttons: [
+                                    'copyHtml5',
+                                    'excelHtml5',
+                                    'csvHtml5'
+
+                                ]
+                            }
+                        );
+                    });
+                </script>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- /container -->
+
+   
+
+ </form>
+</body>
+</html>
