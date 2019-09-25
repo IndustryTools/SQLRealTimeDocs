@@ -1,2 +1,2 @@
 # SQLRealTimeDocs
-Analyse, Document, Index(Find dependencies across SQL objects and business processes) your MSSQL Server.
+Display MS-SQL Architecture, Documentation using Extended Properties and Dependencies among SQL objects. Developed in .Net and MS-SQL
