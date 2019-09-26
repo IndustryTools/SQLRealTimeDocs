@@ -1,7 +1,7 @@
 # SQLRealTimeDocs
 Display MS-SQL Architecture, Documentation using Extended Properties and Dependencies among SQL objects. Developed in .Net and MS-SQL
 
-Demo: https://sqltools.github.io/SQLRealTimeDocs/
+Demo: https://industrytools.github.io/SQLRealTimeDocs/
 
 Developed By
 ============
