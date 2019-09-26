@@ -1,0 +1,318 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148808774-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-148808774-1');
+        </script>
+
+        <title>
+            SQL Documentation
+        </title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Saurabh" />
+
+        <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+    </head>
+    <body>
+        <form method="post" action="./SQLDetails?p=ScheduledJobs&amp;dt=&amp;odmj=&amp;odmi=&amp;h=2748444E4513102C4179E27EE54DB22E4DEEAF72812BBF0B861BD5DE0BFD168A" id="form1">
+            <div class="aspNetHidden">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+            </div>
+
+            <div class="aspNetHidden">
+
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A1B40749" />
+            </div>
+            <nav class="navbar navbar-default" style="min-height:30px;"></nav>
+            <div class="container-fluid">
+                <!-- Static navbar -->
+                <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html">SQL RealTimeDocs™</a>
+                        </div>
+
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Architecture<span class="caret">
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="SQLDetails_Server.html">Servers</a></li>
+                                        <li><a href="SQLDetails_Databases.html">Databases</a></li>
+                                        <li><a href="SQLDetails_ScheduledJobs.html">Scheduled Jobs</a></li>
+                                        <li><a href="SQLDetails_UserPermissions.html">UserPermissions </a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="SQLDetails_ExtendedProperties.html"> Documentation</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="SQLDetails_All.html" onclick="return confirm('This is a resource intensive operation. Have patience.'); "><span style="color: red">Complete Details</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        SQL Objects<span class="caret">
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="SQLDetails_Table.html">Table</a></li>
+                                        <li><a href="SQLDetails_View.html">View</a></li>
+                                        <li><a href="SQLDetails_Columns.html">Columns</a></li>
+                                        <li><a href="SQLDetails_Function.html">Function</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="SQLDetails_StoredProcedures.html">Stored Procedures</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="SQLDetails_ServiceBroker.html">ServiceBroker</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="SQLDetails_Misc.html">Misc.</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        SQL Help<span class="caret">
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="HelpDoc.html#HelpAddEP">Add Documentation / ExtendedProperties</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        About<span class="caret">
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="HelpDoc.html#HelpPurpose">Purpose</a></li>
+                                        <li><a href="HelpDoc.html#HelpHowItWorks">How it Works</a></li>
+                                        <li><a href="HelpDoc.html#HelpHowtoDocument">How To do Documentation</a></li>
+                                        <li><a href="HelpDoc.html#HelpWhatitCantDo">What it Can't Do</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active"><a href="index.html">[Server: Common DB Server]</a></li>
+                                <li class="active"><a href="index.html">[DB: AdventureWorks2017]</a></li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                    <!--/.container-fluid -->
+                </div>
+                <!-- Content Page Section -->
+                <div class="fixed-top" style="text-align:right;"><span id="lblLoggedInUser">[User: <a href="https://www.linkedin.com/in/SaurabhSharmaIndia" target="_blank">Saurabh Sharma</a>]</span></div>
+                <div class="container-fluid">
+
+
+
+                    <span id="ContentSection_lblMessage"></span>
+                    <!-- Main component for a primary marketing message or call to action -->
+
+
+                    <div id="ContentSection_pnlScheduledJobs">
+
+                        <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px" id="ScheduledJobs">
+                            <h3>Scheduled Jobs</h3>
+                            <div class="table-responsive">
+
+                                <table id="ScheduledJobsTable" class="table table-striped table-bordered table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Server Name</th>
+                                            <th>JobName</th>
+                                            <th>isEnabled</th>
+                                            <th>JobSubSystem</th>
+                                            <th>Description</th>
+                                            <th>CreationDatetime</th>
+                                            <th>ModificationDatetime</th>
+                                            <th>JobServerName</th>
+                                            <th>ProviderName</th>
+                                            <th>DataSource</th>
+                                            <th>Step_name</th>
+                                            <th>Command</th>
+                                            <th>Output_File_Name</th>
+                                            <th>RunDurationMinute</th>
+                                            <th>LastRunDuration</th>
+                                            <th>LastRunDateTime</th>
+                                            <th>LastRunStatus</th>
+                                            <th>NextRunDateTime</th>
+                                            <th>Occurrence</th>
+                                            <th>Recurrence</th>
+                                            <th>Frequency</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ServerName_0">CommonDBServer1</span></td>
+                                            <td><a href="SQLDetails_ScheduledJobsHistory.html?p=Dependencies&dt=ScheduledJobs&odmj=sp_run&odmi=Dependencies_theyDependonOurObject&h=68A161D63488923014DE5D4125A5C93355E13562ADD8F7AC53C52ECF7B2CC240" onclick="return confirm('For Demo Only.Only Test Job Name [sp run] History is shown.');"><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobName_0">sp_run</span></a></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Enabled_0">Enabled</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobSubSystem_0">TSQL</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Description_0">No description available.</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_CreationDatetime_0">2019/04/30 04:27:18 PM</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ModificationDatetime_0">2019/04/30 04:27:18 PM</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobServerName_0">CommonDBServer1</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ProviderName_0">SQLOLEDB</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_DataSource_0">CommonDBServer1</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Step_name_0">Verify that automation is enabled.</span></td>
+                                            <td>
+                                                <span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Command_0">
+                                                    IF (msdb.dbo.fn_syspolicy_is_automation_enabled() != 1)
+                                                    BEGIN
+                                                    RAISERROR(34022, 16, 1)
+                                                    END
+                                                </span>
+                                            </td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Output_File_Name_0"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_RunDurationMinute_0"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunDuration_0"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunDateTime_0"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunStatus_0">Failed</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_NextRunDateTime_0"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Occurrence_0">Daily</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Recurrence_0">Occurs every 1 day(s)</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Frequency_0">Occurs once at 02:00:00</span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ServerName_1">CommonDBServer1</span></td>
+                                            <td><a href="SQLDetails_ScheduledJobsHistory.html?p=Dependencies&dt=ScheduledJobs&odmj=sp_run&odmi=Dependencies_theyDependonOurObject&h=68A161D63488923014DE5D4125A5C93355E13562ADD8F7AC53C52ECF7B2CC240" onclick="return confirm('For Demo Only.Only Test Job Name [sp run] History is shown.');"><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobName_1">sp_run_old</span></a></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Enabled_1">Enabled</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobSubSystem_1">TSQL</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Description_1">No description available.</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_CreationDatetime_1">2019/04/30 04:27:18 PM</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ModificationDatetime_1">2019/04/30 04:27:18 PM</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobServerName_1">CommonDBServer1</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ProviderName_1">SQLOLEDB</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_DataSource_1">CommonDBServer1</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Step_name_1">Purge history.</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Command_1">EXEC msdb.dbo.sp_sp_run</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Output_File_Name_1"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_RunDurationMinute_1"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunDuration_1"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunDateTime_1"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunStatus_1">Failed</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_NextRunDateTime_1"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Occurrence_1">Daily</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Recurrence_1">Occurs every 1 day(s)</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Frequency_1">Occurs once at 02:00:00</span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ServerName_2">CommonDBServer1</span></td>
+                                            <td><a href="SQLDetails_ScheduledJobsHistory.html?p=Dependencies&dt=ScheduledJobs&odmj=sp_run&odmi=Dependencies_theyDependonOurObject&h=68A161D63488923014DE5D4125A5C93355E13562ADD8F7AC53C52ECF7B2CC240" onclick="return confirm('For Demo Only.Only Test Job Name [sp run] History is shown.');"><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobName_2">sp_run_veryOldJob</span></a></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Enabled_2">Enabled</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobSubSystem_2">PowerShell</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Description_2">No description available.</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_CreationDatetime_2">2019/04/30 04:27:18 PM</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ModificationDatetime_2">2019/04/30 04:27:18 PM</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_JobServerName_2">CommonDBServer1</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_ProviderName_2">SQLOLEDB</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_DataSource_2">CommonDBServer1</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Step_name_2">Erase Phantom System Health Records.</span></td>
+                                            <td>
+                                                <span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Command_2">
+                                                    if (&#39;$(ESCAPE_SQUOTE(INST))&#39; -eq &#39;MSSQLSERVER&#39;) {$a = &#39;\DEFAULT&#39;} ELSE {$a = &#39;&#39;};
+                                                    (Get-Item SQLSERVER:\SQLPolicy\$(ESCAPE_NONE(SRVR))$a).EraseSystemHealthPhantomRecords()
+                                                </span>
+                                            </td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Output_File_Name_2"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_RunDurationMinute_2"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunDuration_2"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunDateTime_2"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_LastRunStatus_2">Failed</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_NextRunDateTime_2"></span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Occurrence_2">Daily</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Recurrence_2">Occurs every 1 day(s)</span></td>
+                                            <td><span id="ContentSection_rptScheduledJobs_lbl_ScheduledJobs_Frequency_2">Occurs once at 02:00:00</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                var new_row = $("<tr class='search-header'/>");
+                                $('#ScheduledJobsTable thead th').each(function (i) {
+                                    var title = $(this).text();
+                                    var new_th = $('<th style="' + $(this).attr('style') + '" />');
+                                    $(new_th).append('<input type="text" placeholder="' + title + '" data-index="' + i + '"/>');
+                                    $(new_row).append(new_th);
+                                });
+                                $('#ScheduledJobsTable thead').prepend(new_row);
+
+                                // Init DataTable
+                                var table = $('#ScheduledJobsTable').DataTable({
+                                    "scrollX": true,
+                                    "searching": true,
+                                    pageLength: 5,
+                                    dom: 'Bfrtip',
+                                    buttons: [
+                                        'copyHtml5',
+                                        'excelHtml5',
+                                        'csvHtml5'
+
+                                    ]
+                                });
+
+                                // Filter event handler
+                                $(table.table().container()).on('keyup', 'thead input', function () {
+                                    table
+                                        .column($(this).data('index'))
+                                        .search(this.value)
+                                        .draw();
+                                });
+                            });
+                        </script>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <!-- /container -->
+
+
+
+        </form>
+    </body>
+</html>

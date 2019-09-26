@@ -1,0 +1,255 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148808774-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-148808774-1');
+    </script>
+    <title>
+        SQL Documentation
+    </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Saurabh" />
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+</head>
+<body>
+ <form method="post" action="./SQLDetails?p=ServiceBroker&amp;dt=&amp;odmj=&amp;odmi=&amp;h=444ACCDB639CA64F7ED708B8A8341ACAFCBC1BEDB3F47AB6A31C5D16FCD1C862" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A1B40749" />
+</div>
+    <nav class="navbar navbar-default" style="min-height:30px;"></nav>
+    <div class="container-fluid">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">SQL RealTimeDocs™</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Architecture<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Server.html">Servers</a></li>
+                                <li><a href="SQLDetails_Databases.html">Databases</a></li>
+                                <li><a href="SQLDetails_ScheduledJobs.html">Scheduled Jobs</a></li>
+                                <li><a href="SQLDetails_UserPermissions.html">UserPermissions </a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ExtendedProperties.html"> Documentation</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_All.html" onclick="return confirm('This is a resource intensive operation. Have patience.'); "><span style="color: red">Complete Details</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Objects<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Table.html">Table</a></li>
+                                <li><a href="SQLDetails_View.html">View</a></li>
+                                <li><a href="SQLDetails_Columns.html">Columns</a></li>
+                                <li><a href="SQLDetails_Function.html">Function</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_StoredProcedures.html">Stored Procedures</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ServiceBroker.html">ServiceBroker</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_Misc.html">Misc.</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Help<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpAddEP">Add Documentation / ExtendedProperties</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                About<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpPurpose">Purpose</a></li>
+                                <li><a href="HelpDoc.html#HelpHowItWorks">How it Works</a></li>
+                                <li><a href="HelpDoc.html#HelpHowtoDocument">How To do Documentation</a></li>
+                                <li><a href="HelpDoc.html#HelpWhatitCantDo">What it Can't Do</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="index.html">[Server: Common DB Server]</a></li>
+                        <li class="active"><a href="index.html">[DB: AdventureWorks2017]</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </div>
+        <!-- Content Page Section -->
+        <div class="fixed-top" style="text-align:right;"><span id="lblLoggedInUser">[User: <a href="https://www.linkedin.com/in/SaurabhSharmaIndia" target="_blank">Saurabh Sharma</a>]</span></div>
+        <div class="container-fluid">
+
+
+
+            <span id="ContentSection_lblMessage"></span>
+            <!-- Main component for a primary marketing message or call to action -->
+
+
+
+
+
+
+
+
+
+
+
+            <div id="ContentSection_pnlServiceBroker">
+
+                <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px" id="ServiceBroker">
+                    <h3>ServiceBroker</h3>
+                    <div class="table-responsive">
+
+                        <table id="ServiceBrokerTable" class="table table-striped table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Service Name</th>
+                                    <th>Service Owner</th>
+                                    <th>Queue Name</th>
+                                    <th>Contract Name</th>
+                                    <th>Contract Owner</th>
+                                    <th>Sent By</th>
+                                    <th>Message Type Name</th>
+                                    <th>Message Type Owner</th>
+                                    <th>Validation Desc</th>
+                                    <th>Validation Schema</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceName_0">ReceiveService</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceOwner_0">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_QueueName_0">ReceiveQueue</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractName_0">Contract</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractOwner_0">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_SentBy_0">INITIATOR</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeName_0">Message</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeOwner_0">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationDesc_0">XML</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationSchema_0">ValidationSchema1</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceName_1">SendService</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceOwner_1">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_QueueName_1">SendQueue</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractName_1">Contract</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractOwner_1">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_SentBy_1">INITIATOR</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeName_1">Message</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeOwner_1">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationDesc_1">XML</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationSchema_1">ValidationSchema1</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceName_2">DataReceiveService</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceOwner_2">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_QueueName_2">DataReceiveQueue</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractName_2">DataContract</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractOwner_2">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_SentBy_2">INITIATOR</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeName_2">DataMessage</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeOwner_2">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationDesc_2">XML</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationSchema_2">ValidationSchema2</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceName_3">DataSendService</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ServiceOwner_3">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_QueueName_3">DataSendQueue</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractName_3">DataContract</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ContractOwner_3">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_SentBy_3">INITIATOR</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeName_3">DataMessage</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_MessageTypeOwner_3">dbo</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationDesc_3">XML</span></td>
+                                    <td><span id="ContentSection_rptServiceBroker_lbl_ServiceBroker_ValidationSchema_3">ValidationSchema2</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#ServiceBrokerTable').dataTable(
+                            {
+                                dom: 'Bfrtip',
+                                buttons: [
+                                    'copyHtml5',
+                                    'excelHtml5',
+                                    'csvHtml5'
+
+                                ]
+                            }
+                        );
+                    });
+                </script>
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    <!-- /container -->
+
+   
+
+ </form>
+</body>
+</html>

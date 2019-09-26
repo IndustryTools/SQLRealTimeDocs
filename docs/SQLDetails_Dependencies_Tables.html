@@ -1,0 +1,336 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148808774-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-148808774-1');
+    </script>
+    <title>
+        SQL Documentation
+    </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Saurabh" />
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+</head>
+<body>
+ <form method="post" action="./SQLDetails?p=Dependencies&amp;dt=Table&amp;odmj=Employee&amp;odmi=Dependencies_theyDependonOurObject&amp;h=DC48990D84A444FBA39A1F65AE939B406ACA32E4E28FDB9168A6BD16C4E7533C" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A1B40749" />
+</div>
+    <nav class="navbar navbar-default" style="min-height:30px;"></nav>
+    <div class="container-fluid">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">SQL RealTimeDocs™</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Architecture<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Server.html">Servers</a></li>
+                                <li><a href="SQLDetails_Databases.html">Databases</a></li>
+                                <li><a href="SQLDetails_ScheduledJobs.html">Scheduled Jobs</a></li>
+                                <li><a href="SQLDetails_UserPermissions.html">UserPermissions </a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ExtendedProperties.html"> Documentation</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_All.html" onclick="return confirm('This is a resource intensive operation. Have patience.'); "><span style="color: red">Complete Details</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Objects<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Table.html">Table</a></li>
+                                <li><a href="SQLDetails_View.html">View</a></li>
+                                <li><a href="SQLDetails_Columns.html">Columns</a></li>
+                                <li><a href="SQLDetails_Function.html">Function</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_StoredProcedures.html">Stored Procedures</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ServiceBroker.html">ServiceBroker</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_Misc.html">Misc.</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Help<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpAddEP">Add Documentation / ExtendedProperties</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                About<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpPurpose">Purpose</a></li>
+                                <li><a href="HelpDoc.html#HelpHowItWorks">How it Works</a></li>
+                                <li><a href="HelpDoc.html#HelpHowtoDocument">How To do Documentation</a></li>
+                                <li><a href="HelpDoc.html#HelpWhatitCantDo">What it Can't Do</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="index.html">[Server: Common DB Server]</a></li>
+                        <li class="active"><a href="index.html">[DB: AdventureWorks2017]</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </div>
+        <!-- Content Page Section -->
+        <div class="fixed-top" style="text-align:right;"><span id="lblLoggedInUser">[User: <a href="https://www.linkedin.com/in/SaurabhSharmaIndia" target="_blank">Saurabh Sharma</a>]</span></div>
+        <div class="container-fluid">
+
+
+
+            <span id="ContentSection_lblMessage"></span>
+            <!-- Main component for a primary marketing message or call to action -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="ContentSection_pnlDependencies">
+
+                <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px" id="Dependencies_theyDependonOurObject">
+                    <h3>List of Objects which depends on <b><span id="ContentSection_lbl_theyDependonOurObject_ObjectName">Employee</span></b> </h3>
+                    <div class="table-responsive table-condensed">
+
+                        <table id="Dependencies_theyDependonOurObject_Table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Server Name</th>
+                                    <th>DB Name</th>
+                                    <th>ObjectName</th>
+                                    <th>Object Type</th>
+                                    <th>is Ambigious <br />(0: No , 1: Yes , 2: Error)</th>
+                                    <th>Dependent Object Count</th>
+                                    <th>Dependent Object Type</th>
+                                    <th>Dependent Object</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ServerName_0">CommonDBServer1</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_DBName_0">AdventureWorks2017</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ObjectName_0">Employee</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Object_Type_Desc_0">USER_TABLE</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_is_Ambigious_0">0</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Count_0">6</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Type_Desc_0">CHECK_CONSTRAINT</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_0">CK_Employee_BirthDate, CK_Employee_MaritalStatus, CK_Employee_HireDate, CK_Employee_Gender, CK_Employee_VacationHours, CK_Employee_SickLeaveHours</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ServerName_1">CommonDBServer1</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_DBName_1">AdventureWorks2017</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ObjectName_1">Employee</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Object_Type_Desc_1">USER_TABLE</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_is_Ambigious_1">0</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Count_1">5</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Type_Desc_1">SQL_STORED_PROCEDURE</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_1">uspGetEmployeeManagers, uspGetManagerEmployees, uspUpdateEmployeeHireInfo, uspUpdateEmployeeLogin, uspUpdateEmployeePersonalInfo</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ServerName_2">CommonDBServer1</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_DBName_2">AdventureWorks2017</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ObjectName_2">Employee</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Object_Type_Desc_2">USER_TABLE</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_is_Ambigious_2">0</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Count_2">1</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Type_Desc_2">SQL_TABLE_VALUED_FUNCTION</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_2">ufnGetContactInformation</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ServerName_3">CommonDBServer1</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_DBName_3">AdventureWorks2017</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ObjectName_3">Employee</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Object_Type_Desc_3">USER_TABLE</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_is_Ambigious_3">0</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Count_3">1</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Type_Desc_3">Constraint/Index</span></td>
+                                    <td>
+                                        <span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_3">
+                                            (Constraint And Indexes) [Constraint Count: 6]: DF_Employee_SalariedFlag, DF_Employee_VacationHours, DF_Employee_SickLeaveHours, DF_Employee_CurrentFlag, DF_Employee_rowguid, DF_Employee_ModifiedDate ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||&#x0D;
+                                            Indexes:  [Index Count: 6]: PK_Employee_BusinessEntityID, IX_Employee_OrganizationNode, IX_Employee_OrganizationLevel_OrganizationNode, AK_Employee_LoginID, AK_Employee_NationalIDNumber, AK_Employee_rowguid
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ServerName_4">CommonDBServer1</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_DBName_4">AdventureWorks2017</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_ObjectName_4">Employee</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Object_Type_Desc_4">USER_TABLE</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_is_Ambigious_4">0</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Count_4">5</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_Type_Desc_4">VIEW</span></td>
+                                    <td><span id="ContentSection_rptDependencies_theyDependonOurObject_lbl_Dependencies_theyDependonOurObject_Dependent_Object_4">vEmployee, vEmployeeDepartment, vEmployeeDepartmentHistory, vSalesPerson, vSalesPersonSalesByFiscalYears</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        //$('#Dependencies_theyDependonOurObject_Table').dataTable();
+                        var new_row = $("<tr class='search-header'/>");
+                        $('#Dependencies_theyDependonOurObject_Table thead th').each(function (i) {
+                            var title = $(this).text();
+                            var new_th = $('<th style="' + $(this).attr('style') + '" />');
+                            $(new_th).append('<input type="text" placeholder="' + title + '" data-index="' + i + '"/>');
+                            $(new_row).append(new_th);
+                        });
+                        $('#Dependencies_theyDependonOurObject_Table thead').prepend(new_row);
+
+                        // Init DataTable
+                        var table = $('#Dependencies_theyDependonOurObject_Table').DataTable({
+                            "scrollX": true,
+                            "searching": true,
+                            dom: 'Bfrtip',
+                            buttons: [
+                                'copyHtml5',
+                                'excelHtml5',
+                                'csvHtml5'
+
+                            ]
+                        });
+
+                        // Filter event handler
+                        $(table.table().container()).on('keyup', 'thead input', function () {
+                            table
+                                .column($(this).data('index'))
+                                .search(this.value)
+                                .draw();
+                        });
+                    });
+                </script>
+                <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px" id="Dependencies_OurObjectDependsOn">
+                    <h3><b><span id="ContentSection_lbl_OurObjectDependsOn_ObjectName">Employee</span></b> Depends on following List of Objects </h3>
+                    <div class="table-responsive table-condensed">
+
+                        <table id="Dependencies_OurObjectDependsOn_Table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Server Name</th>
+                                    <th>DB Name</th>
+                                    <th>ObjectName</th>
+                                    <th>Object Type</th>
+                                    <th>is Ambigious <br />(0: No , 1: Yes , 2: Error)</th>
+                                    <th>Dependent Object Count</th>
+                                    <th>Dependent Object Type</th>
+                                    <th>Dependent Object</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        //$('#Dependencies_OurObjectDependsOn_Table').dataTable();
+                        var new_row = $("<tr class='search-header'/>");
+                        $('#Dependencies_OurObjectDependsOn_Table thead th').each(function (i) {
+                            var title = $(this).text();
+                            var new_th = $('<th style="' + $(this).attr('style') + '" />');
+                            $(new_th).append('<input type="text" placeholder="' + title + '" data-index="' + i + '"/>');
+                            $(new_row).append(new_th);
+                        });
+                        $('#Dependencies_OurObjectDependsOn_Table thead').prepend(new_row);
+
+                        // Init DataTable
+                        var table = $('#Dependencies_OurObjectDependsOn_Table').DataTable({
+                            "scrollX": true,
+                            "searching": true,
+                            dom: 'Bfrtip',
+                            buttons: [
+                                'copyHtml5',
+                                'excelHtml5',
+                                'csvHtml5'
+
+                            ]
+                        });
+
+                        // Filter event handler
+                        $(table.table().container()).on('keyup', 'thead input', function () {
+                            table
+                                .column($(this).data('index'))
+                                .search(this.value)
+                                .draw();
+                        });
+                    });
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /container -->
+
+   
+
+ </form>
+</body>
+</html>
