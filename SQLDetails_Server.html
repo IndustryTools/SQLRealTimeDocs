@@ -1,0 +1,200 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">
+    <title>
+        SQL Documentation
+    </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Saurabh" />
+
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+</head>
+<body>
+ <form method="post" action="./SQLDetails?p=Server&amp;dt=&amp;odmj=&amp;odmi=&amp;h=A91FF7B3DCD7DC7863C69C6B12A5A071454532D789D0EDD1C245DE98CF84531F" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A1B40749" />
+</div>
+    <nav class="navbar navbar-default" style="min-height:30px;"></nav>
+    <div class="container-fluid">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Index.html">SQL RealTimeDocs™</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Architecture<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Server.html">Servers</a></li>
+                                <li><a href="SQLDetails_Databases.html">Databases</a></li>
+                                <li><a href="SQLDetails_ScheduledJobs.html">Scheduled Jobs</a></li>
+                                <li><a href="SQLDetails_UserPermissions.html">UserPermissions </a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ExtendedProperties.html"> Documentation</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_All.html" onclick="return confirm('This is a resource intensive operation. Have patience.'); "><span style="color: red">Complete Details</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Objects<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Table.html">Table</a></li>
+                                <li><a href="SQLDetails_View.html">View</a></li>
+                                <li><a href="SQLDetails_Columns.html">Columns</a></li>
+                                <li><a href="SQLDetails_Function.html">Function</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_StoredProcedures.html">Stored Procedures</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ServiceBroker.html">ServiceBroker</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_Misc.html">Misc.</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Help<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpAddEP">Add Documentation / ExtendedProperties</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                About<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpPurpose">Purpose</a></li>
+                                <li><a href="HelpDoc.html#HelpHowItWorks">How it Works</a></li>
+                                <li><a href="HelpDoc.html#HelpHowtoDocument">How To do Documentation</a></li>
+                                <li><a href="HelpDoc.html#HelpWhatitCantDo">What it Can't Do</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="Index.html">[Server: Common DB Server]</a></li>
+                        <li class="active"><a href="Index.html">[DB: AdventureWorks2017]</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </div>
+        <!-- Content Page Section -->
+        <div class="fixed-top" style="text-align:right;"><span id="lblLoggedInUser">[User: <a href="https://www.linkedin.com/in/SaurabhSharmaIndia" target="_blank">Saurabh Sharma</a>]</span></div>
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div id="ContentSection_pnlServer">
+
+                <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px;max-width: 100%" id="Server">
+                    <h3>Server</h3>
+                    <div class="table-responsive table-condensed">
+
+                        <table id="ServerTable" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Server Name</th>
+                                    <th>Start Time(Only Primary)</th>
+                                    <th>Classification</th>
+                                    <th>Sql Version</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <a href="SQLDetails_Dependencies_Default.html?p=Dependencies&dt=LinkServer&odmj=CommonDBServer1&odmi=Dependencies_theyDependonOurObject&h=F00A1EA76CF1584BB0DBF65CAC097640CCA633426D2CF8E8176D34369A4AA665" 
+                                           onclick="return confirm('Finding Dependencies of Link Server is resource Intensive because it Will check all databases for Link Server Name. Have Patience.');">
+                                            <span id="ContentSection_rptServer_lbl_Server_ServerName_0">Common DB Server1</span>
+                                        </a>
+                                    </td>
+                                    <td><span id="ContentSection_rptServer_lbl_Server_SQLServer_Start_Time_0">2019/09/24 10:02:21 PM</span></td>
+                                    <td><span id="ContentSection_rptServer_lbl_Server_Classification_0">Primary</span></td>
+                                    <td>
+                                        <span id="ContentSection_rptServer_lbl_Server_SqlVersion_0">
+                                            Microsoft SQL Server 2017 (RTM) - 14.0.1000.169 (X64)
+                                            Aug 22 2017 17:04:49
+                                            Copyright (C) 2017 Microsoft Corporation
+                                            Developer Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 14393: )
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <a href="SQLDetails_Dependencies_Default.html?p=Dependencies&dt=LinkServer&odmj=CommonDBServer2&odmi=Dependencies_theyDependonOurObject&h=8CE193C9FBC254FAB07F3BDB7E5325B9171950757AD977C6BC5E7B5D5887AE6E" onclick="return confirm('Finding Dependencies of Link Server is resource Intensive because it Will check all databases for Link Server Name. Have Patience.');">
+                                            <span id="ContentSection_rptServer_lbl_Server_ServerName_1">Common DB Server2</span>
+                                        </a>
+                                    </td>
+                                    <td><span id="ContentSection_rptServer_lbl_Server_SQLServer_Start_Time_1"></span></td>
+                                    <td><span id="ContentSection_rptServer_lbl_Server_Classification_1">Linked</span></td>
+                                    <td><span id="ContentSection_rptServer_lbl_Server_SqlVersion_1"></span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#ServerTable').dataTable(
+                            {
+                                dom: 'Bfrtip',
+                                buttons: [
+                                    'copyHtml5',
+                                    'excelHtml5',
+                                    'csvHtml5'
+
+                                ]
+                            }
+                        );
+                    });
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /container -->
+ </form>
+</body>
+</html>
