@@ -1,0 +1,252 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">
+    <title>
+        SQL Documentation
+    </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Saurabh" />
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+</head>
+<body>
+ <form method="post" action="./SQLDetails?p=Dependencies&amp;dt=Misc&amp;odmj=[Default SQL Object]&amp;odmi=Dependencies_theyDependonOurObject&amp;h=14D71FB2694BE571DDBBE11CC5CBC932BF60A69D89269607751B27FA5DCFF983" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A1B40749" />
+</div>
+    <nav class="navbar navbar-default" style="min-height:30px;"></nav>
+    <div class="container-fluid">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">SQL RealTimeDocs™</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Architecture<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Server.html">Servers</a></li>
+                                <li><a href="SQLDetails_Databases.html">Databases</a></li>
+                                <li><a href="SQLDetails_ScheduledJobs.html">Scheduled Jobs</a></li>
+                                <li><a href="SQLDetails_UserPermissions.html">UserPermissions </a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ExtendedProperties.html"> Documentation</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_All.html" onclick="return confirm('This is a resource intensive operation. Have patience.'); "><span style="color: red">Complete Details</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Objects<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="SQLDetails_Table.html">Table</a></li>
+                                <li><a href="SQLDetails_View.html">View</a></li>
+                                <li><a href="SQLDetails_Columns.html">Columns</a></li>
+                                <li><a href="SQLDetails_Function.html">Function</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_StoredProcedures.html">Stored Procedures</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_ServiceBroker.html">ServiceBroker</a></li>
+                                <li class="divider"></li>
+                                <li><a href="SQLDetails_Misc.html">Misc.</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                SQL Help<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpAddEP">Add Documentation / ExtendedProperties</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                About<span class="caret">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="HelpDoc.html#HelpPurpose">Purpose</a></li>
+                                <li><a href="HelpDoc.html#HelpHowItWorks">How it Works</a></li>
+                                <li><a href="HelpDoc.html#HelpHowtoDocument">How To do Documentation</a></li>
+                                <li><a href="HelpDoc.html#HelpWhatitCantDo">What it Can't Do</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="index.html">[Server: Common DB Server]</a></li>
+                        <li class="active"><a href="index.html">[DB: AdventureWorks2017]</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </div>
+        <!-- Content Page Section -->
+        <div class="fixed-top" style="text-align:right;"><span id="lblLoggedInUser">[User: <a href="https://www.linkedin.com/in/SaurabhSharmaIndia" target="_blank">Saurabh Sharma</a>]</span></div>
+        <div class="container-fluid">
+
+
+
+            <span id="ContentSection_lblMessage"></span>
+            <!-- Main component for a primary marketing message or call to action -->
+
+
+            <div id="ContentSection_pnlDependencies">
+
+                <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px" id="Dependencies_theyDependonOurObject">
+                    <h3>List of Objects which depends on <b><span id="ContentSection_lbl_theyDependonOurObject_ObjectName">[Default SQL Object]</span></b> </h3>
+                    <div class="table-responsive table-condensed">
+
+                        <table id="Dependencies_theyDependonOurObject_Table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Server Name</th>
+                                    <th>DB Name</th>
+                                    <th>ObjectName</th>
+                                    <th>Object Type</th>
+                                    <th>is Ambigious <br />(0: No , 1: Yes , 2: Error)</th>
+                                    <th>Dependent Object Count</th>
+                                    <th>Dependent Object Type</th>
+                                    <th>Dependent Object</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        //$('#Dependencies_theyDependonOurObject_Table').dataTable();
+                        var new_row = $("<tr class='search-header'/>");
+                        $('#Dependencies_theyDependonOurObject_Table thead th').each(function (i) {
+                            var title = $(this).text();
+                            var new_th = $('<th style="' + $(this).attr('style') + '" />');
+                            $(new_th).append('<input type="text" placeholder="' + title + '" data-index="' + i + '"/>');
+                            $(new_row).append(new_th);
+                        });
+                        $('#Dependencies_theyDependonOurObject_Table thead').prepend(new_row);
+
+                        // Init DataTable
+                        var table = $('#Dependencies_theyDependonOurObject_Table').DataTable({
+                            "scrollX": true,
+                            "searching": true,
+                            dom: 'Bfrtip',
+                            buttons: [
+                                'copyHtml5',
+                                'excelHtml5',
+                                'csvHtml5'
+
+                            ]
+                        });
+
+                        // Filter event handler
+                        $(table.table().container()).on('keyup', 'thead input', function () {
+                            table
+                                .column($(this).data('index'))
+                                .search(this.value)
+                                .draw();
+                        });
+                    });
+                </script>
+                <div class="col-sm-12 col-md-12" style="border: 5px solid #eee; margin: 20px" id="Dependencies_OurObjectDependsOn">
+                    <h3><b><span id="ContentSection_lbl_OurObjectDependsOn_ObjectName">[Default SQL Object]</span></b> Depends on following List of Objects </h3>
+                    <div class="table-responsive table-condensed">
+
+                        <table id="Dependencies_OurObjectDependsOn_Table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Server Name</th>
+                                    <th>DB Name</th>
+                                    <th>ObjectName</th>
+                                    <th>Object Type</th>
+                                    <th>is Ambigious <br />(0: No , 1: Yes , 2: Error)</th>
+                                    <th>Dependent Object Count</th>
+                                    <th>Dependent Object Type</th>
+                                    <th>Dependent Object</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        //$('#Dependencies_OurObjectDependsOn_Table').dataTable();
+                        var new_row = $("<tr class='search-header'/>");
+                        $('#Dependencies_OurObjectDependsOn_Table thead th').each(function (i) {
+                            var title = $(this).text();
+                            var new_th = $('<th style="' + $(this).attr('style') + '" />');
+                            $(new_th).append('<input type="text" placeholder="' + title + '" data-index="' + i + '"/>');
+                            $(new_row).append(new_th);
+                        });
+                        $('#Dependencies_OurObjectDependsOn_Table thead').prepend(new_row);
+
+                        // Init DataTable
+                        var table = $('#Dependencies_OurObjectDependsOn_Table').DataTable({
+                            "scrollX": true,
+                            "searching": true,
+                            dom: 'Bfrtip',
+                            buttons: [
+                                'copyHtml5',
+                                'excelHtml5',
+                                'csvHtml5'
+
+                            ]
+                        });
+
+                        // Filter event handler
+                        $(table.table().container()).on('keyup', 'thead input', function () {
+                            table
+                                .column($(this).data('index'))
+                                .search(this.value)
+                                .draw();
+                        });
+                    });
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /container -->
+
+   
+
+ </form>
+</body>
+</html>
